@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import ColorBox from './Box';
+// import ColorBox from './Box';
+import BoxList from './BoxList';
 
 function App() {
   return (
     <div className="App">
-      <ColorBox />
+      <h1>Box Maker!</h1>
+      <BoxList />
     </div>
   );
 }
