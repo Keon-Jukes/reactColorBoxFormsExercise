@@ -21,8 +21,11 @@ class BoxList extends React.Component {
         this.removeBox = this.removeBox.bind(this);
     }
 
-    removeBox(){
-
+    removeBox(id){
+        const removedBox = this.state.listOfBoxes.filter(colorBox => colorBox.id !== id);
+        this.setState({
+            listOfBoxes: removedBox
+        });
     }
 
 addBox(newBox){
@@ -33,7 +36,7 @@ addBox(newBox){
 
     render(){
         return(<div>
-            {this.state.listOfBoxes.length > 0 ? (<div>{this.state.listOfBoxes.map(colorBox => <div key={colorBox.id}><Box boxColor={colorBox.boxColor} boxWidth={colorBox.boxWidth} boxHeight={colorBox.boxHeight} boxId={colorBox.id}/> <button>X</button></div>)} </div>) : (<div>No boxes available..</div>)}
+            {this.state.listOfBoxes.length > 0 ? (<div>{this.state.listOfBoxes.map(colorBox => <div key={colorBox.id}><Box boxColor={colorBox.boxColor} boxWidth={colorBox.boxWidth} boxHeight={colorBox.boxHeight} boxId={colorBox.id}/> <button onClick={() => this.removeBox(colorBox.id)}>X</button></div>)} </div>) : (<div>No boxes available..</div>)}
             <NewBoxForm addBox={this.addBox}/>
         </div>)
     }
