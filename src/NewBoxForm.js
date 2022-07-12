@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
+import { v4 as uuid } from 'uuid';
 
 class NewBoxForm extends Component {
     constructor(props){
         super(props)
         this.state = {
-            'boxColor' : '',
-            'boxWidth' : '',
-            'boxHeight' : ''
+            boxColor : '',
+            boxWidth : '',
+            boxHeight : '',
+            id: uuid(),
+
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -19,7 +22,9 @@ class NewBoxForm extends Component {
 
 
     handleSubmit(evt){
-
+        evt.preventDefault();
+        this.props.addBox(this.state);
+        this.setState({ boxColor : '', boxWidth : '', boxHeight : '',  id: uuid(),})
     }
 
     handleChange(evt){
@@ -33,11 +38,11 @@ class NewBoxForm extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='boxColor'>Box Color: </label>
-                    <input name='box-color' id='boxColor' placeholder='box color' value={this.state.boxColor}/>
+                    <input name='boxColor' id='boxColor' placeholder='box color' value={this.state.boxColor} onChange={this.handleChange}/>
                     <label htmlFor='boxHeight'>Box Height: </label>
-                    <input name='box-height' id='boxHeight'  placeholder='box height' value={this.state.boxHeight}/>
+                    <input name='boxHeight' id='boxHeight'  placeholder='box height' value={this.state.boxHeight} onChange={this.handleChange}/>
                     <label htmlFor='boxWidth'>Box Width: </label>
-                    <input name='box-width' id='boxWidth' placeholder='box width' value={this.state.boxWidth}/>
+                    <input name='boxWidth' id='boxWidth' placeholder='box width' value={this.state.boxWidth} onChange={this.handleChange}/>
                     <button>Create Box!</button>
                 </form>
             </div>
