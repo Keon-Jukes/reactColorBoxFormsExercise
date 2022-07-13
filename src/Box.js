@@ -6,13 +6,12 @@ class Box extends React.Component {
     //     boxHeight: '200px',
     //     boxWidth: '200px'
     // }
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     render() {
         return (
             <div style={{ backgroundColor: this.props.boxColor, width: this.props.boxWidth, height: this.props.boxHeight }}>
-
             </div>
         )
     }

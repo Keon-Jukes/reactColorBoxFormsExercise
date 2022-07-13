@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from './Box';
 import NewBoxForm from './NewBoxForm';
+import "./BoxList.css";
 // import { v4 as uuid } from 'uuid';
 
 class BoxList extends React.Component {
@@ -37,7 +38,7 @@ addBox(newBox){
     render(){
         return(<div>
             <NewBoxForm addBox={this.addBox}/>
-            {this.state.listOfBoxes.length > 0 ? (<div>{this.state.listOfBoxes.map(colorBox => <div key={colorBox.id}><Box boxColor={colorBox.boxColor} boxWidth={colorBox.boxWidth} boxHeight={colorBox.boxHeight} boxId={colorBox.id}/> <button onClick={() => this.removeBox(colorBox.id)}>X</button></div>)} </div>) : (<div>No boxes available..</div>)}
+            {this.state.listOfBoxes.length > 0 ? (<div>{this.state.listOfBoxes.map(colorBox => <div key={colorBox.id}><Box boxColor={colorBox.boxColor} boxWidth={colorBox.boxWidth} boxHeight={colorBox.boxHeight} boxId={colorBox.id}/> <button className='BoxList-remove' onClick={() => this.removeBox(colorBox.id)}>X</button></div>)} </div>) : (<div>No boxes available..</div>)}
         </div>)
     }
 }
