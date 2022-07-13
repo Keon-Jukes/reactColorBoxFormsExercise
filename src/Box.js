@@ -11,7 +11,7 @@ class Box extends React.Component {
     // }
     render() {
         return (
-            <div style={{ backgroundColor: this.props.boxColor, width: this.props.boxWidth, height: this.props.boxHeight }}>
+            <div style={{backgroundColor: this.props.boxColor, width: `${this.props.boxWidth}px`, height: `${this.props.boxHeight}px`}}>
             </div>
         )
     }
