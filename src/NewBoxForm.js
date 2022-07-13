@@ -40,9 +40,9 @@ class NewBoxForm extends Component {
                     <label htmlFor='boxColor'>Box Color: </label>
                     <input name='boxColor' id='boxColor' placeholder='box color' value={this.state.boxColor} onChange={this.handleChange}/>
                     <label htmlFor='boxHeight'>Box Height: </label>
-                    <input name='boxHeight' id='boxHeight'  placeholder='box height' value={this.state.boxHeight} onChange={this.handleChange}/>
+                    <input name='boxHeight' id='boxHeight'  placeholder='box height px' value={this.state.boxHeight} onChange={this.handleChange}/>
                     <label htmlFor='boxWidth'>Box Width: </label>
-                    <input name='boxWidth' id='boxWidth' placeholder='box width' value={this.state.boxWidth} onChange={this.handleChange}/>
+                    <input name='boxWidth' id='boxWidth' placeholder='box width px' value={this.state.boxWidth} onChange={this.handleChange}/>
                     <button>Create Box!</button>
                 </form>
             </div>
