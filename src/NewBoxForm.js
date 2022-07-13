@@ -13,11 +13,6 @@ class NewBoxForm extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.handleRemove = this.handleRemove.bind(this);
-    }
-
-    handleRemove(evt){
-
     }
 
 
